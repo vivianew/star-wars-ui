@@ -1,0 +1,51 @@
+@import '../../styles/global';
+
+.login {
+  &__container {
+    color: $black;
+    position: absolute;
+    background-color: $black;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+
+    @include desktop {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    border: 3px solid $beige;
+    padding: 60px;
+    border-radius: 5px;
+    background-color: $lightBeige;
+
+    @include mobile {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  &__footnote {
+    padding-top: 30px;
+    font-size: 18px;
+  }
+}

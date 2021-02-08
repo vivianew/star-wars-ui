@@ -1,0 +1,35 @@
+@import '../../styles/global';
+
+.list {
+  &__container {
+    color: $black;
+  }
+}
+
+.list-item {
+  &__container {
+    position: relative;;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    background-color: $beige;
+    margin-top: 15px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    border-radius: 3px;
+    padding: 13px;
+    box-shadow: 0 0 2px 0 rgba(187, 187, 187, .5);
+  }
+
+  &__info {
+    padding: 13px;
+    border: none;
+    height: 100%;
+    background-color: $beige;
+    font-size: 22px;
+  }
+}

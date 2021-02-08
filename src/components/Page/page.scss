@@ -1,0 +1,46 @@
+@import '../../styles/global';
+
+.page {
+  &__container {
+    background: $grey;
+    color: $black;
+    margin: 20px 30px 0 30px;
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      padding: 40px;
+      font-size: 15px;
+      margin: 15px 10px 0 10px;
+    }
+  }
+
+  &__title {
+    font-size: 45px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    cursor: pointer;
+
+    @include mobile {
+      font-size: 22px;
+    }
+  }
+
+  &__data {
+    padding: 0 90px 90px;
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+  }
+
+  &__intro {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__data-info {
+    margin-top: 40px;
+  }
+}

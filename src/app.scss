@@ -1,7 +1,5 @@
-$titleColor: red;
-
 .app {
-  &__title {
-    color: $titleColor;
+  &__container {
+    height: 100%;
   }
 }

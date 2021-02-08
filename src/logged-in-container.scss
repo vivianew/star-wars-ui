@@ -1,0 +1,8 @@
+@import './styles/global';
+
+.logged-in {
+  &__container {
+    background-image: url('./assets/home_starry.jpg');
+    min-height: 100%;
+  }
+}

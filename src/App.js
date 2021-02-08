@@ -1,11 +1,13 @@
 import React from 'react';
-import './app.scss';
+import { Route, HashRouter as Router } from 'react-router-dom';
+import LoggedInContainer from './LoggedInContainer';
+import './styles/project.scss';
 
 const App = () => {
   return (
-    <div className="app__title">
-      Hello World
-    </div>
+    <Router>
+      <Route path="/" component={LoggedInContainer} />
+    </Router>
   );
 };
 

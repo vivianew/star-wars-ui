@@ -1,0 +1,25 @@
+.input {
+  &__container {
+    margin-bottom: 25px;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label-text {
+    padding-bottom: 8px;
+  }
+
+  &__input {
+    height: 30px;
+  }
+}
+
+.button {
+  &__button {
+    height: 45px;
+    margin-top: 10px;
+  }
+}

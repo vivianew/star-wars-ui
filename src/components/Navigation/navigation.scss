@@ -1,0 +1,105 @@
+@import '../../styles/global';
+
+.navigation {
+  &__container {
+    background: $grey;
+    color: $black;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+
+    //@include mobile {
+    //  position: fixed;
+    //  width: 100%;
+    //  z-index: 900;
+    //}
+  }
+
+  &__logo {
+    padding: 40px 25px;
+
+    @include mobile {
+      padding: 30px 20px;
+    }
+  }
+
+  &__ham-icon {
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+    padding-right: 20px;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__site-title {
+    text-decoration: none;
+    font-weight: bold;
+    color: $black;
+
+    @include mobile {
+      font-size: 15px;
+    }
+  }
+
+  &__labels-container {
+    padding: 40px 25px;
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__labels-mob {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__label-title {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 10px;
+    color: $black;
+
+    &--selected {
+      text-decoration: underline;
+    }
+
+    @include mobile {
+      font-size: 25px;
+      padding: 20px 0;
+      cursor: pointer;
+      font-style: italic;
+    }
+  }
+
+  &__mobile-menu {
+    display: none;
+  }
+
+  &__show-mobile-menu {
+    display: block;
+    background: $grey;
+    overflow-y: hidden;
+    position: fixed;
+
+    top: 70px;
+    left: 0;
+    right: 0;
+
+
+    z-index: 900;
+    width: 100%;
+    height: 100%;
+
+    @include desktop {
+      display: none;
+    }
+  }
+}
