@@ -11,4 +11,5 @@ BACKEND=http://localhost:8080/api/auth \
 STAR_WARS=https://swapi.dev/api
 
 # Storybook
-Components used for this project are available on Storybook. 
+Components used for this project are available on Storybook. \
+Please check them here [star-wars-components](https://github.com/vivianew/star-wars-components)
