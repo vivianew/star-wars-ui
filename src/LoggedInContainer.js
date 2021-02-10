@@ -1,16 +1,22 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import NavigationBar from './components/Navigation/NavigationBar';
 import RestrictedRoute from './components/RestrictedRoute/RestrictedRoute';
 import Login from './containers/Login/Login';
 import FilmsContainer from './containers/Films/Films';
-import Spaceships from './containers/Spaceships/Spaceships';
+import Starships from './containers/Starships/Starships';
+import Vehicles from './containers/Vehicles/Vehicles';
 import People from './containers/People/People';
+import Planets from './containers/Planets/Planets';
+import Species from './containers/Species/Species';
 import HomeContainer from './containers/Home/Home';
+import ForgetPW from './containers/Login/ForgetPW';
+import { logout } from './actions/loginActions';
 import './logged-in-container.scss';
 
-const LoggedInContainer = ({ isLoggedIn = false }) => {
+const LoggedInContainer = () => {
   const links = [
     {
       to: '/',
@@ -21,8 +27,8 @@ const LoggedInContainer = ({ isLoggedIn = false }) => {
       text: 'Planets',
     },
     {
-      to: '/spaceships',
-      text: 'Spaceships',
+      to: '/starships',
+      text: 'Starships',
     },
     {
       to: '/vehicles',
@@ -42,8 +48,16 @@ const LoggedInContainer = ({ isLoggedIn = false }) => {
     },
   ];
 
-  const { location: { pathname } } = useHistory();
+  const { location: { pathname }, push } = useHistory();
+  const { isLoggedIn } = useSelector((state) => state.login);
 
+  const dispatch = useDispatch();
+
+  const handleLogout = () => () => {
+    dispatch(logout())
+
+    push('/');
+  }
 
   return (
     <div className="logged-in__container">
@@ -52,11 +66,14 @@ const LoggedInContainer = ({ isLoggedIn = false }) => {
           links={links}
           currentUrl={pathname}
           title="Star Wars API"
+          logout={handleLogout()}
         />
 
         <RestrictedRoute isLoggedIn={!isLoggedIn}>
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Login} />
+          <Switch>
+            <Route path="/forgetPW" component={ForgetPW} />
+            <Route path="/" component={Login} />
+          </Switch>
         </RestrictedRoute>
 
         <>
@@ -64,7 +81,10 @@ const LoggedInContainer = ({ isLoggedIn = false }) => {
             <Switch>
               <Route path="/films" component={FilmsContainer} />
               <Route path="/people" component={People} />
-              <Route path="/spaceships" component={Spaceships} />
+              <Route path="/starships" component={Starships} />
+              <Route path="/vehicles" component={Vehicles} />
+              <Route path="/planets" component={Planets} />
+              <Route path="/species" component={Species} />
               <Route path="/" component={HomeContainer} />
             </Switch>
           </RestrictedRoute>

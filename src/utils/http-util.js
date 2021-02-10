@@ -1,21 +1,17 @@
 import axios from 'axios';
-import { apis } from '../config/env';
-
-const env = 'dev';
 
 export const HTTP = {
-  get: async (url) => {
+  getStarWars: async (url) => {
     try {
-      return await axios.get(`${apis.starWars[env]}/${url}`);
+      return await axios.get(`${process.env.STAR_WARS}/${url}`);
     } catch (e) {
       console.log('e', e)
     }
   },
+  get: async (url, param) => {
+    return await axios.get(`${process.env.BACKEND}/${url}/${param}`)
+  },
   post: async (url, body) => {
-    try {
-      return await axios.post(`${apis.backend[env]}/${url}`, body)
-    } catch (e) {
-      console.log('e', e)
-    }
+    return await axios.post(`${process.env.BACKEND}/${url}`, body)
   },
 }

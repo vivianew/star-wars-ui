@@ -1,17 +1,22 @@
-export const GET_SW_FILMS = '@getSarWarsInfo/films';
+export const GET_SW_DATA = '@getStarWarsInfo/GET_SW_DATA';
 
 const initialState = {
   films: [],
+  people: [],
+  starships: [],
+  vehicles: [],
+  planets: [],
+  species: [],
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_SW_FILMS:
+    case GET_SW_DATA: {
       return {
         ...state,
-        films: action.films,
+        [action.key]: action.value,
       }
-
+    }
     default: return state;
   }
 }

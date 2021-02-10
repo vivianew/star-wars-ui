@@ -1,0 +1,14 @@
+@import '../../styles/global';
+
+.table {
+  &__row {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 15px;
+
+    @include mobile {
+      grid-template-columns: none;
+      word-wrap: anywhere;
+    }
+  }
+}

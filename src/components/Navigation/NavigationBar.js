@@ -9,7 +9,8 @@ const NavigationBar = (props) => {
   const {
     links,
     currentUrl,
-    title
+    title,
+    logout,
   } = props;
 
   const [showMobileMenu, setToggle] = useState(false);
@@ -47,10 +48,17 @@ const NavigationBar = (props) => {
 
       <div className="navigation__ham-icon">
         <HamburgerIcon burgerClick={toggleHam} />
+        <div onClick={logout}>Logout</div>
       </div>
 
       <div className="navigation__labels-container">
         {allLinks}
+        <div
+          onClick={logout}
+          className="navigation__logout"
+        >
+          Logout
+        </div>
       </div>
 
       {

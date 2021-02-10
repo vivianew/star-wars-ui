@@ -1,18 +1,16 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getStarWarsFilms } from '../../actions/getStarWarsInfoActions';
+import { getStarWarsData } from '../../actions/getStarWarsInfoActions';
 import Page from '../../components/Page/Page';
 
 const FilmsContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getStarWarsFilms())
+    dispatch(getStarWarsData('films'))
   }, [])
 
   const films = useSelector((state) => state.starWars.films);
-
-  console.log('films', films)
 
   return (
     <div>

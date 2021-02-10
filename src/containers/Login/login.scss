@@ -36,6 +36,11 @@
       bottom: 0;
       left: 0;
       right: 0;
+      padding: 22px;
+    }
+
+    @include desktop {
+      min-width: 400px;
     }
   }
 
@@ -47,5 +52,45 @@
   &__footnote {
     padding-top: 30px;
     font-size: 18px;
+  }
+
+  &__footnote-error {
+    color: $lightBeige;
+    padding-top: 10px;
+    font-size: 18px;
+  }
+
+  &__success {
+    color: $orange;
+  }
+
+  &__error {
+    max-width: 400px;
+    padding-top: 20px;
+
+    @include mobile {
+      color: $orange;
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  &__new-pw {
+    padding-top: 20px;
+  }
+
+  &__error-desktop {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__error-mobile {
+    @include desktop {
+      display: none;
+    }
   }
 }

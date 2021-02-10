@@ -3,25 +3,25 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getStarWarsData } from '../../actions/getStarWarsInfoActions';
 import Page from '../../components/Page/Page';
 
-const PeopleContainer = () => {
+const Starships = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getStarWarsData('people'))
+    dispatch(getStarWarsData('starships'))
   }, [])
 
-  const people = useSelector((state) => state.starWars.people);
+  const starships = useSelector((state) => state.starWars.starships);
 
   return (
     <div>
       <Page
-        title="People"
-        intro="People of Star Wars"
-        data={people}
+        title="Vehicles"
+        intro="Vehicles of Star Wars"
+        data={starships}
         titleKey="name"
       />
     </div>
   )
 }
 
-export default PeopleContainer;
+export default Starships;

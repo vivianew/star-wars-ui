@@ -1,6 +1,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: ["@babel/polyfill", path.resolve(__dirname, '..', './src/index.js')],
@@ -32,7 +33,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '..', './src/index.html'),
-    })
+    }),
+    new Dotenv(),
   ],
   output: {
     path: path.resolve(__dirname, '..', './dist'),

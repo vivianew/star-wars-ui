@@ -9,7 +9,6 @@
     flex-direction: column;
 
     @include mobile {
-      padding: 40px;
       font-size: 15px;
       margin: 15px 10px 0 10px;
     }
@@ -33,6 +32,10 @@
     display: flex;
     flex-direction: column;
     font-size: 25px;
+
+    @include mobile {
+      padding: 0 5px;
+    }
   }
 
   &__intro {

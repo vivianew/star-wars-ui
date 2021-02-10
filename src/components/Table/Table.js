@@ -1,20 +1,19 @@
 import React from 'react';
-import TableRow from './TableRow';
+import './table.scss';
 
 const Table = ({ item }) => {
-  const keys = Object.keys(item);
-  const values = Object.values(item);
-
-  console.log('keys', keys)
-  console.log('values', values)
+  const isArr = (item) => Array.isArray(item) ? item.join(', ') : item;
 
   return (
     <div>
       {
         Object.keys(item).map((key) => (
-          <div key={key}>
-            <div>{key}</div>
-            <div>{item[key]}</div>
+          <div
+            key={key}
+            className="table__row"
+          >
+            <div>{key}:</div>
+            <div>{isArr(item[key])}</div>
           </div>
         ))
       }

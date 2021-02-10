@@ -1,19 +1,14 @@
-# Simple React Template 
-- React 17 
-- Babel 7
-- Webpack 5
-- Sass
+# Prerequisites
+- Node > 12
+- MongoDB
 
-## Available Scripts
+## How to Run
+Please run both UI and Backend projects with `npm run dev` \
+It will launch UI at [http://localhost:9000](http://localhost:9000) to view it in the browser.
 
-In the project directory, you can run:
+Please add a `.env` file with:\
+BACKEND=http://localhost:8080/api/auth \
+STAR_WARS=https://swapi.dev/api
 
-### `npm run dev`
-
-Runs the app in the development mode.\
-Open [http://localhost:9000](http://localhost:9000) to view it in the browser.
-
-The page will reload if you make edits.
-
-## Webpack
-Configs in `build-utils` folder
+# Storybook
+Components used for this project are available on Storybook. 
