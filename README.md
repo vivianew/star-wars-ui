@@ -1,8 +1,8 @@
 # Prerequisites
 - Node > 12
-- MongoDB
 
 ## How to Run
+Install the dependencies with `npm i` \
 Please run both UI and Backend projects with `npm run dev` \
 It will launch UI at [http://localhost:9000](http://localhost:9000) to view it in the browser. \
 Find the backend here [star-wars-backend](https://github.com/vivianew/star-wars-be)
